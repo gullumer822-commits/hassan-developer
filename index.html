@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hassan Developer — modern, responsive websites for businesses and personal brands.">
+  <title>Hassan Developer | Web Developer</title>
+  <style>
+    :root{--bg:#0b1020;--panel:#121a2e;--text:#f4f7ff;--muted:#aab5cc;--accent:#66e3c4;--accent2:#7c8cff}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(1100px,90%);margin:auto}
+    header{position:sticky;top:0;z-index:10;background:#0b1020eF;border-bottom:1px solid #ffffff18;backdrop-filter:blur(12px)}
+    nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .logo{font-size:1.25rem;font-weight:800;letter-spacing:.3px}.logo span{color:var(--accent)}
+    .navlinks{display:flex;gap:25px;align-items:center;color:var(--muted);font-size:.95rem}
+    .navlinks a:hover{color:var(--accent)}
+    .btn{display:inline-block;padding:12px 20px;border-radius:9px;background:var(--accent);color:#07131b;font-weight:700;border:0;cursor:pointer}
+    .btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
+    .hero{padding:105px 0 90px;background:radial-gradient(ellipse at 80% 20%,#34418a55,transparent 42%),radial-gradient(ellipse at 10% 80%,#1c8d7950,transparent 35%)}
+    .hero-grid{display:grid;grid-template-columns:1.4fr .8fr;gap:55px;align-items:center}
+    .eyebrow{color:var(--accent);font-weight:700;letter-spacing:2px;text-transform:uppercase;font-size:.78rem}
+    h1{font-size:clamp(2.7rem,6vw,5rem);line-height:1.08;margin:18px 0}
+    h1 span{background:linear-gradient(90deg,var(--accent),#9ca8ff);background-clip:text;color:transparent}
+    .lead{color:var(--muted);font-size:1.1rem;max-width:620px;margin-bottom:28px}
+    .hero-actions{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+    .outline{border:1px solid #ffffff45;border-radius:9px;padding:11px 19px;color:var(--text)}
+    .outline:hover{border-color:var(--accent);color:var(--accent)}
+    .code-card{background:#10182b;border:1px solid #ffffff20;border-radius:18px;padding:25px;box-shadow:0 25px 70px #0006;transform:rotate(2deg)}
+    .dots{display:flex;gap:7px;margin-bottom:22px}.dots i{width:9px;height:9px;border-radius:50%;background:#ff7777}.dots i:nth-child(2){background:#ffd166}.dots i:nth-child(3){background:#66e3c4}
+    .code{font-family:Consolas,monospace;color:#c5d2ed;font-size:.95rem;line-height:2}
+    .code .green{color:#66e3c4}.code .purple{color:#a9a4ff}.code .yellow{color:#ffd88a}
+    section{padding:82px 0}
+    .section-head{text-align:center;margin-bottom:42px}
+    h2{font-size:clamp(2rem,4vw,2.7rem);margin-bottom:10px}
+    .section-head p,.muted{color:var(--muted)}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .card{background:var(--panel);border:1px solid #ffffff12;padding:26px;border-radius:15px}
+    .card .icon{font-size:1.7rem;margin-bottom:14px}
+    .card h3{margin-bottom:9px}.card p{color:var(--muted);font-size:.96rem}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
+    .about-box{padding:30px;border-radius:18px;background:linear-gradient(135deg,#18264a,#142b35);border:1px solid #ffffff1a}
+    .skill{margin-top:18px}.skill-top{display:flex;justify-content:space-between;color:var(--muted);font-size:.9rem;margin-bottom:7px}
+    .bar{height:8px;background:#ffffff18;border-radius:20px;overflow:hidden}.bar span{display:block;height:100%;width:85%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:20px}
+    .projects .card{min-height:190px;display:flex;flex-direction:column;justify-content:space-between}
+    .tag{display:inline-block;color:var(--accent);font-size:.78rem;margin-top:14px}
+    .contact{background:linear-gradient(135deg,#141f3b,#102b32);border-top:1px solid #ffffff12}
+    .contact-box{max-width:700px;margin:auto;text-align:center}
+    .contact-box p{color:var(--muted);margin:12px 0 25px}
+    footer{padding:25px 0;color:var(--muted);font-size:.9rem;border-top:1px solid #ffffff15}
+    footer .wrap{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+    @media(max-width:760px){.navlinks{gap:12px;font-size:.82rem}.navlinks a:nth-child(3){display:none}.hero{padding:75px 0}.hero-grid,.about-grid{grid-template-columns:1fr}.code-card{max-width:480px}.cards{grid-template-columns:1fr}.section-head{text-align:left}}
+    @media(max-width:480px){nav{align-items:flex-start;padding:17px 0;flex-direction:column}.navlinks{width:100%;justify-content:space-between}.navlinks a:nth-child(3){display:block}.hero-actions{align-items:stretch;flex-direction:column}.hero-actions a{text-align:center}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap"><nav>
+    <a class="logo" href="#home">HASSAN<span>.</span></a>
+    <div class="navlinks">
+      <a href="#home">Home</a><a href="#services">Services</a><a href="#about">About</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+    </div>
+  </nav></div>
+</header>
+<main>
+  <section class="hero" id="home">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Web Developer</div>
+        <h1>Hi, I'm <span>Hassan</span>.<br>I build modern websites.</h1>
+        <p class="lead">I create clean, responsive and user-friendly websites that help businesses and people present themselves online with confidence.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#contact">Let's Work Together</a>
+          <a class="outline" href="#projects">View My Work</a>
+        </div>
+      </div>
+      <div class="code-card" aria-label="Decorative code illustration">
+        <div class="dots"><i></i><i></i><i></i></div>
+        <div class="code">
+          <div><span class="purple">const</span> developer = {</div>
+          <div>&nbsp;&nbsp;name: <span class="green">"Hassan"</span>,</div>
+          <div>&nbsp;&nbsp;role: <span class="green">"Web Developer"</span>,</div>
+          <div>&nbsp;&nbsp;creative: <span class="yellow">true</span>,</div>
+          <div>&nbsp;&nbsp;focused: <span class="yellow">"You"</span></div>
+          <div>};</div>
+          <div><span class="purple">build</span>(greatWebsites); <span class="green">✓</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">What I Do</div><h2>My Services</h2><p>Practical web solutions for your next idea.</p></div>
+      <div class="cards">
+        <article class="card"><div class="icon">💻</div><h3>Website Development</h3><p>Modern websites built to present your business, brand or project clearly.</p></article>
+        <article class="card"><div class="icon">📱</div><h3>Responsive Design</h3><p>Layouts that adapt to mobile phones, tablets and desktop screens.</p></article>
+        <article class="card"><div class="icon">🛠️</div><h3>Website Updates</h3><p>Help improving website content, layout, speed and user experience.</p></article>
+      </div>
+    </div>
+  </section>
+  <section id="about">
+    <div class="wrap about-grid">
+      <div><div class="eyebrow">A Little About Me</div><h2>Turning ideas into websites.</h2>
+        <p class="muted">I'm Hassan, a web developer who enjoys creating useful and attractive online experiences. My focus is on simple design, clear information and websites that work across devices.</p>
+        <p class="muted" style="margin-top:14px">Have an idea for a website? Let's discuss how to bring it online.</p>
+      </div>
+      <div class="about-box">
+        <h3>My Focus Areas</h3>
+        <div class="skill"><div class="skill-top"><span>Web Design</span><span>Creative</span></div><div class="bar"><span style="width:88%"></span></div></div>
+        <div class="skill"><div class="skill-top"><span>Responsive Layouts</span><span>Mobile-first</span></div><div class="bar"><span style="width:92%"></span></div></div>
+        <div class="skill"><div class="skill-top"><span>Clean User Experience</span><span>Simple</span></div><div class="bar"><span style="width:86%"></span></div></div>
+      </div>
+    </div>
+  </section>
+  <section class="projects" id="projects">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Selected Work</div><h2>Project Ideas</h2><p>Sample project types for my portfolio.</p></div>
+      <div class="cards">
+        <article class="card"><div><h3>Business Website</h3><p>A professional online home for a local business, with services and contact details.</p></div><span class="tag">Business · Web Design</span></article>
+        <article class="card"><div><h3>Personal Portfolio</h3><p>A simple portfolio to introduce a professional and showcase their work.</p></div><span class="tag">Portfolio · Responsive</span></article>
+        <article class="card"><div><h3>Online Service Page</h3><p>A focused landing page that explains a service and helps visitors get in touch.</p></div><span class="tag">Landing Page · UI</span></article>
+      </div>
+    </div>
+  </section>
+  <section class="contact" id="contact">
+    <div class="wrap contact-box">
+      <div class="eyebrow">Get In Touch</div><h2>Let's build something great.</h2>
+      <p>Have a project or a question? Send me an email and tell me what you have in mind.</p>
+      <a class="btn" href="https://wa.me/923015045776" target="_blank" rel="noopener">Contact on WhatsApp</a>
+      <p style="font-size:.95rem;margin-top:18px;color:var(--text)">WhatsApp / Phone: <strong>0301 5045776</strong></p>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap"><span>© <span id="year">2026</span> Hassan Developer. All rights reserved.</span><span>Designed with care.</span></div></footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
